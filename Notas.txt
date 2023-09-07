@@ -1,0 +1,60 @@
+Para compilar por paquetes:
+
+javac todas las rutas usando los .java separadas por espacios
+java -cp .:todas las rutas separadas por ; usando los .class y al final el principal
+
+poner TODA la ruta en el package
+
+para crear un jar:
+
+javac -cp nombre_de_los_jar separados por ; la_ruta_de_los_.java
+jar -cf nombre_del.jar ruta_de_los_.class
+
+jar ejecutable
+
+javac -cp nombre_de_los_jar separados por ; la_ruta_de_los_.java (Principal)
+jar -cfm nombre_del_.jar MANIFEST.MF ruta_de_los_class_principal
+java -jar nombre_del_.jar
+
+MANIFEST.MF
+Main-Class: TODA la ruta de la clase principal
+Class-Path: .jar de las dependencias
+
+*varios espacios*
+
+
+package pe.edu.pucp.lp2soft.config;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+/**
+ *
+ * @author adalb
+ */
+public class DBManager{
+    private Connection con;
+    private static DBManager dbManager = new DBManager();
+    private String url = "jdbc:mysql://" + 
+            "db-lp2-branny.clsnqoojnhgq.us-east-1.rds.amazonaws.com" +
+            ":3306/lp2_Branny";
+    private String username = "admin";
+    private String password = "Penalead135";
+    
+    public Connection getConnection(){
+        try{
+            //Registrar el driver de conexion JDBC
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion con la base de datos
+            con = DriverManager.getConnection(url, username, password);
+            System.out.println("Se ha establecido la conexion con la base de datos");
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return con;
+    }
+    
+    public static DBManager getInstance(){
+        return dbManager;
+    }
+}

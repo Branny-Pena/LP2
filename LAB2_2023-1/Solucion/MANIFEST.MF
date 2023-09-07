@@ -1,0 +1,13 @@
+Main-Class: com/pucp/eventsoft/main/Principal
+Class-Path: eventsoftColaboradoresModel.jar eventsoftGestionModel.jar eventsoftLogisticaModel.jar
+
+
+
+
+
+
+
+
+
+
+

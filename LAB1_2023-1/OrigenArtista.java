@@ -1,0 +1,3 @@
+enum OrigenArtista{
+	Nacional, Internacional
+}
