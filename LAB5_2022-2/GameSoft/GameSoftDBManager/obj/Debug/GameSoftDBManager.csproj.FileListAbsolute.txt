@@ -1,0 +1,6 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftDBManager\bin\Debug\GameSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftDBManager\bin\Debug\GameSoftDBManager.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftDBManager\obj\Debug\GameSoftDBManager.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftDBManager\obj\Debug\GameSoftDBManager.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftDBManager\obj\Debug\GameSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftDBManager\obj\Debug\GameSoftDBManager.pdb

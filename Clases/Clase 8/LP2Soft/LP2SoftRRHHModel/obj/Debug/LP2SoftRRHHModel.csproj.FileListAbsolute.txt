@@ -1,0 +1,6 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftRRHHModel\obj\Debug\LP2SoftRRHHModel.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftRRHHModel\obj\Debug\LP2SoftRRHHModel.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftRRHHModel\bin\Debug\LP2SoftRRHHModel.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftRRHHModel\bin\Debug\LP2SoftRRHHModel.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftRRHHModel\obj\Debug\LP2SoftRRHHModel.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftRRHHModel\obj\Debug\LP2SoftRRHHModel.pdb

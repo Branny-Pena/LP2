@@ -1,0 +1,6 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB7_2023-1\EventSoft\EventSoftDBManager\bin\Debug\EventSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB7_2023-1\EventSoft\EventSoftDBManager\bin\Debug\EventSoftDBManager.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB7_2023-1\EventSoft\EventSoftDBManager\obj\Debug\EventSoftDBManager.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB7_2023-1\EventSoft\EventSoftDBManager\obj\Debug\EventSoftDBManager.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB7_2023-1\EventSoft\EventSoftDBManager\obj\Debug\EventSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB7_2023-1\EventSoft\EventSoftDBManager\obj\Debug\EventSoftDBManager.pdb

@@ -1,0 +1,16 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\GameSoftController.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\GameSoftController.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\GameSoftModel.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\GameSoftModel.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\obj\Debug\GameSoftController.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\obj\Debug\GameSoftController.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\obj\Debug\GameSoftController.csproj.CopyComplete
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\obj\Debug\GameSoftController.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\obj\Debug\GameSoftController.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\GameSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\MySql.Data.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\System.Memory.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\System.Buffers.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\LAB5_2022-2\GameSoft\GameSoftController\bin\Debug\GameSoftDBManager.pdb

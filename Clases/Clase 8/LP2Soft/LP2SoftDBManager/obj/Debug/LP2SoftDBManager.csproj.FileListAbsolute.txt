@@ -1,0 +1,6 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftDBManager\bin\Debug\LP2SoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftDBManager\bin\Debug\LP2SoftDBManager.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftDBManager\obj\Debug\LP2SoftDBManager.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftDBManager\obj\Debug\LP2SoftDBManager.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftDBManager\obj\Debug\LP2SoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\LP2Soft\LP2SoftDBManager\obj\Debug\LP2SoftDBManager.pdb
