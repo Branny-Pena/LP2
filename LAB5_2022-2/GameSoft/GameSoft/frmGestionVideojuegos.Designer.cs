@@ -77,16 +77,17 @@
             this.tsMenu.Location = new System.Drawing.Point(0, 0);
             this.tsMenu.Name = "tsMenu";
             this.tsMenu.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.tsMenu.Size = new System.Drawing.Size(1106, 38);
+            this.tsMenu.Size = new System.Drawing.Size(1106, 34);
             this.tsMenu.TabIndex = 1;
             this.tsMenu.Text = "toolStrip1";
+            this.tsMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsMenu_ItemClicked);
             // 
             // btnNuevo
             // 
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(92, 33);
+            this.btnNuevo.Size = new System.Drawing.Size(92, 29);
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 

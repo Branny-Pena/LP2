@@ -1,60 +1,256 @@
-Para compilar por paquetes:
+Para el DBManager
 
-javac todas las rutas usando los .java separadas por espacios
-java -cp .:todas las rutas separadas por ; usando los .class y al final el principal
+public static string cadenaConexion =
+    "server=db-lp2-branny.clsnqoojnhgq.us-east-1.rds.amazonaws.com;" +
+    "user=admin;" +
+    "password=Penalead135;" +
+    "database=LAB5_2022-2;" +
+    "port=3306;";
+	
+El .dll se añade en controller
 
-poner TODA la ruta en el package
+Estructura para listar
 
-para crear un jar:
-
-javac -cp nombre_de_los_jar separados por ; la_ruta_de_los_.java
-jar -cf nombre_del.jar ruta_de_los_.class
-
-jar ejecutable
-
-javac -cp nombre_de_los_jar separados por ; la_ruta_de_los_.java (Principal)
-jar -cfm nombre_del_.jar MANIFEST.MF ruta_de_los_class_principal
-java -jar nombre_del_.jar
-
-MANIFEST.MF
-Main-Class: TODA la ruta de la clase principal
-Class-Path: .jar de las dependencias
-
-*varios espacios*
-
-
-package pe.edu.pucp.lp2soft.config;
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-/**
- *
- * @author adalb
- */
-public class DBManager{
-    private Connection con;
-    private static DBManager dbManager = new DBManager();
-    private String url = "jdbc:mysql://" + 
-            "db-lp2-branny.clsnqoojnhgq.us-east-1.rds.amazonaws.com" +
-            ":3306/lp2_Branny";
-    private String username = "admin";
-    private String password = "Penalead135";
-    
-    public Connection getConnection(){
-        try{
-            //Registrar el driver de conexion JDBC
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion con la base de datos
-            con = DriverManager.getConnection(url, username, password);
-            System.out.println("Se ha establecido la conexion con la base de datos");
+public BindingList<Videojuego> listarTodas(string nombre)
+{
+    BindingList<Videojuego> videojuegos = new BindingList<Videojuego>();
+    try
+    {
+        con = new MySqlConnection(DBManager.cadenaConexion);
+        con.Open();
+        command = new MySqlCommand();
+        command.Connection = con;
+        command.CommandType = CommandType.StoredProcedure;
+        command.CommandText = "LISTAR_VIDEOJUEGOS_POR_NOMBRE";
+        command.Parameters.AddWithValue("_nombre", nombre);
+        reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            Videojuego videojuego = new Videojuego();
+            videojuego.IdVideojuego = reader.GetInt32("v.id_videojuego");
+            videojuego.Desarrolladora.IdDesarrolladora = reader.GetInt32("d.id_desarrolladora");
+            videojuego.Desarrolladora.Nombre = reader.GetString("nombre_desarrolladora");
+            videojuego.Genero.IdGenero = reader.GetInt32("g.id_genero");
+            videojuego.Genero.Nombre = reader.GetString("nombre_genero");
+            videojuego.Plataforma = reader.GetChar("p.id_plataforma");
+            videojuego.Nombre = reader.GetString("nombre_videojuego");
+            videojuego.MaxJugadores = reader.GetInt32("v.max_jugadores");
+            videojuego.Cooperativo = (reader.GetInt32("v.es_cooperativo") != 0);
+            videojuego.Multiplayer = (reader.GetInt32("v.es_multiplayer") != 0);
+            videojuego.EdicionEspecial = (reader.GetInt32("v.es_edicion_especial") != 0);
+            videojuego.Precio = reader.GetDouble("v.precio");
+            videojuego.Descripcion = reader.GetString("v.descripcion");
+            videojuegos.Add(videojuego);
         }
-        catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return con;
     }
-    
-    public static DBManager getInstance(){
-        return dbManager;
+    catch (Exception ex)
+    {
+        throw new Exception(ex.Message);
+    }
+    finally
+    {
+        try { con.Close(); } catch (Exception ex) { throw new Exception(ex.Message); }
+    }
+    return videojuegos;
+}
+
+Estructura para insertar
+
+public int insertar(Videojuego videojuego)
+{
+    int resultado = 0;
+    try
+    {
+        con = new MySqlConnection(DBManager.cadenaConexion);
+        con.Open();
+        command = new MySqlCommand();
+        command.Connection = con;
+        command.CommandType = CommandType.StoredProcedure;
+        command.CommandText = "INSERTAR_VIDEOJUEGO";
+        command.Parameters.Add("_id_videojuego", MySqlDbType.Int32).Direction =
+            ParameterDirection.Output;
+        command.Parameters.AddWithValue("_fid_desarrolladora", videojuego.Desarrolladora.IdDesarrolladora);
+        command.Parameters.AddWithValue("_fid_genero", videojuego.Genero.IdGenero);
+        command.Parameters.AddWithValue("_fid_plataforma", videojuego.Plataforma);
+        command.Parameters.AddWithValue("_nombre", videojuego.Nombre);
+        command.Parameters.AddWithValue("_max_jugadores", videojuego.MaxJugadores);
+        command.Parameters.AddWithValue("_es_cooperativo", videojuego.Cooperativo);
+        command.Parameters.AddWithValue("_es_multiplayer", videojuego.Multiplayer);
+        command.Parameters.AddWithValue("_es_edicion_especial", videojuego.EdicionEspecial);
+        command.Parameters.AddWithValue("_precio", videojuego.Precio);
+        command.Parameters.AddWithValue("_descripcion", videojuego.Descripcion);
+        command.Parameters.AddWithValue("_portada", videojuego.Portada);
+        resultado = command.ExecuteNonQuery();
+        videojuego.IdVideojuego =
+            Int32.Parse(command.Parameters["_id_videojuego"].Value.ToString());
+    }
+    catch (Exception ex)
+    {
+        throw new Exception(ex.Message);
+    }
+    finally
+    {
+        try { con.Close(); } catch (Exception ex) { throw new Exception(ex.Message); }
+    }
+    return resultado;
+}
+
+Para las interfaces graficas, añadir los dao como atributos y tambien los model
+
+En el metodo inicializador, inicializar todos los atributos
+para los listados
+
+cboGenero.DataSource = _daoGenero.listarGeneros();
+cboGenero.DisplayMember = "Nombre";
+cboGenero.ValueMember = "IdGenero";
+
+public void limpiarComponentes()
+{
+    txtIdVideojuego.Text = "";
+    txtNombre.Text = "";
+    txtDesarrolladora.Text = "";
+    cboGenero.SelectedIndex = -1;
+    rbPlaystation.Checked = false;
+    rbNintendo.Checked = false;
+    rbXbox.Checked = false;
+    nudMaxJugadores.Value = 1;
+    cbCooperativo.Checked = false;
+    cbMultiplayer.Checked = false;
+    cbEdicionEspecial.Checked = false;
+    txtPrecio.Text = "";
+    txtDescripcion.Text = "";
+    pbPortada.Image = null;
+}
+
+public void establecerEstadoComponentes()
+{
+    switch (_estado)
+    {
+        case Estado.Inicial:
+            btnNuevo.Enabled = true;
+            btnBuscar.Enabled = true;
+            btnGuardar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnBuscarDesarrolladora.Enabled = false;
+            btnSubirPortada.Enabled = false;
+            txtIdVideojuego.Enabled = false;
+            txtNombre.Enabled = false;
+            txtDesarrolladora.Enabled = false;
+            txtPrecio.Enabled = false;
+            txtDescripcion.Enabled = false;
+            cboGenero.Enabled = false;
+            rbPlaystation.Enabled = false;
+            rbNintendo.Enabled = false;
+            rbXbox.Enabled = false;
+            nudMaxJugadores.Enabled = false;
+            cbCooperativo.Enabled = false;
+            cbMultiplayer.Enabled = false;
+            cbEdicionEspecial.Enabled = false;
+            break;
+        case Estado.Nuevo:
+            btnNuevo.Enabled = false;
+            btnBuscar.Enabled = false;
+            btnGuardar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnBuscarDesarrolladora.Enabled = true;
+            btnSubirPortada.Enabled = true;
+            txtIdVideojuego.Enabled = true;
+            txtNombre.Enabled = true;
+            txtDesarrolladora.Enabled = true;
+            txtPrecio.Enabled = true;
+            txtDescripcion.Enabled = true;
+            cboGenero.Enabled = true;
+            rbPlaystation.Enabled = true;
+            rbNintendo.Enabled = true;
+            rbXbox.Enabled = true;
+            nudMaxJugadores.Enabled = true;
+            cbCooperativo.Enabled = true;
+            cbMultiplayer.Enabled = true;
+            cbEdicionEspecial.Enabled = true;
+            break;
     }
 }
+
+private void btnSubirPortada_Click(object sender, EventArgs e)
+{
+    try
+    {
+        if (ofdPortada.ShowDialog() == DialogResult.OK)
+        {
+            _rutaFotoPortada = ofdPortada.FileName;
+            pbPortada.Image = Image.FromFile(_rutaFotoPortada);
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+    }
+}
+
+private void btnCancelar_Click(object sender, EventArgs e)
+{
+    _estado = Estado.Inicial;
+    establecerEstadoComponentes();
+    limpiarComponentes();
+}
+
+private void btnNuevo_Click(object sender, EventArgs e)
+{
+    _estado = Estado.Nuevo;
+    _videojuego = new Videojuego();
+    establecerEstadoComponentes();
+}
+
+Para guardar un registro
+
+private void btnGuardar_Click(object sender, EventArgs e)
+{
+    _videojuego.Desarrolladora = new Desarrolladora();
+    _videojuego.Genero = new Genero();
+    _videojuego.Desarrolladora.IdDesarrolladora = 1;
+    _videojuego.Nombre = txtNombre.Text;
+    _videojuego.Genero.IdGenero = (int)cboGenero.SelectedValue;
+    if (rbNintendo.Checked) _videojuego.Plataforma = 'N';
+    if (rbPlaystation.Checked) _videojuego.Plataforma = 'P';
+    if (rbXbox.Checked) _videojuego.Plataforma = 'X';
+    _videojuego.MaxJugadores = Int32.Parse(nudMaxJugadores.Text);
+    _videojuego.Cooperativo = cbCooperativo.Checked;
+    _videojuego.Multiplayer = cbMultiplayer.Checked;
+    _videojuego.EdicionEspecial = cbEdicionEspecial.Checked;
+    _videojuego.Precio = Double.Parse(txtPrecio.Text);
+    _videojuego.Descripcion = txtDescripcion.Text;
+    int resultado = _daoVideojuego.insertar(_videojuego);
+    if (resultado != 0)
+    {
+        txtIdVideojuego.Text = _videojuego.IdVideojuego.ToString();
+        MessageBox.Show("El videojuego se ha registrado con exito", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    else
+        MessageBox.Show("Hubo un error en el registro", "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+}
+
+Para abrir un menu de busqueda
+
+private void btnBuscarDesarrolladora_Click(object sender, EventArgs e)
+{
+    frmBusquedaDesarrolladoras formBusqDesa = new frmBusquedaDesarrolladoras();
+    if (formBusqDesa.ShowDialog() == DialogResult.OK)
+    {
+
+    }
+}
+
+Para el programa principal
+
+internal static class Program
+{
+    [STAThread]
+    public static void Main(string[] args)
+    {
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new frmGestionVideojuegos());
+    }
+}
+
+

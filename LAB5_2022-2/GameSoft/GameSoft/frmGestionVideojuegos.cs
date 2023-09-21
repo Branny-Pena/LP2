@@ -175,5 +175,10 @@ namespace GameSoft
         {
 
         }
+
+        private void tsMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
