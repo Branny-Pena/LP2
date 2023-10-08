@@ -1,0 +1,6 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftDBManager\bin\Debug\ProjectSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftDBManager\bin\Debug\ProjectSoftDBManager.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftDBManager\obj\Debug\ProjectSoftDBManager.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftDBManager\obj\Debug\ProjectSoftDBManager.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftDBManager\obj\Debug\ProjectSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftDBManager\obj\Debug\ProjectSoftDBManager.pdb

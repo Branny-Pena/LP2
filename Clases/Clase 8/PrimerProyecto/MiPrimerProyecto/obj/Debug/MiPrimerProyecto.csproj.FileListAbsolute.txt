@@ -1,7 +1,0 @@
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\bin\Debug\MiPrimerProyecto.exe.config
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\bin\Debug\MiPrimerProyecto.exe
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\bin\Debug\MiPrimerProyecto.pdb
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.csproj.AssemblyReference.cache
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.csproj.CoreCompileInputs.cache
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.exe
-C:\Users\adalb\OneDrive\Escritorio\LP2\Clases\Clase 8\PrimerProyecto\MiPrimerProyecto\obj\Debug\MiPrimerProyecto.pdb

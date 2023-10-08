@@ -1,0 +1,16 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\ProjectSoftController.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\ProjectSoftController.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\MySql.Data.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\ProjectSoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\ProjectSoftModel.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\System.Memory.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\System.Buffers.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\ProjectSoftDBManager.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\bin\Debug\ProjectSoftModel.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\obj\Debug\ProjectSoftController.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\obj\Debug\ProjectSoftController.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\obj\Debug\ProjectSoftController.csproj.CopyComplete
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\obj\Debug\ProjectSoftController.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2022-2\CSharp\ProjectSoft\ProjectSoftController\obj\Debug\ProjectSoftController.pdb
