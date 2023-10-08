@@ -1,0 +1,6 @@
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2023-1\EduSoft\EdusoftDBManager\bin\Debug\EdusoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2023-1\EduSoft\EdusoftDBManager\bin\Debug\EdusoftDBManager.pdb
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2023-1\EduSoft\EdusoftDBManager\obj\Debug\EdusoftDBManager.csproj.AssemblyReference.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2023-1\EduSoft\EdusoftDBManager\obj\Debug\EdusoftDBManager.csproj.CoreCompileInputs.cache
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2023-1\EduSoft\EdusoftDBManager\obj\Debug\EdusoftDBManager.dll
+C:\Users\adalb\OneDrive\Escritorio\LP2\EX1_2023-1\EduSoft\EdusoftDBManager\obj\Debug\EdusoftDBManager.pdb
