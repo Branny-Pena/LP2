@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.smashsoft.pucp.edu.pe/" targetNamespace="http://services.smashsoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="listarPlataformasTodas" type="tns:listarPlataformasTodas" />
+  <xs:element name="listarPlataformasTodasResponse" type="tns:listarPlataformasTodasResponse" />
+  <xs:complexType name="listarPlataformasTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPlataformasTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:plataforma" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="plataforma">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idPlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

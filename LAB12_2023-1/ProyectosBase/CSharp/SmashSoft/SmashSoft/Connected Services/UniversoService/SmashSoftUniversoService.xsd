@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.smashsoft.pucp.edu.pe/" targetNamespace="http://services.smashsoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="listarUniversosPorNombre" type="tns:listarUniversosPorNombre" />
+  <xs:element name="listarUniversosPorNombreResponse" type="tns:listarUniversosPorNombreResponse" />
+  <xs:complexType name="listarUniversosPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUniversosPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:universo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="universo">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idUniverso" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,93 @@
+public class AplicacionMySQL implements AplicacionDAO{
+    
+    private Connection con;
+    private ResultSet rs;
+    private CallableStatement cs;
+    
+    @Override
+    public int insertar(Aplicacion aplicacion) {
+        int resultado = 0;
+        try{            
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_APLICACION(?,?,?,?,?,?,?)}");
+            cs.registerOutParameter("_cod_aplicacion", java.sql.Types.INTEGER);
+            cs.setString("_nombre", aplicacion.getNombre());
+            cs.setInt("_fid_division", aplicacion.getIdDivision());
+            cs.setString("_activoDeInformacion", aplicacion.getActivoDeInformacion());
+            cs.setString("_version", aplicacion.getVersion());
+            cs.setString("_descripcion", aplicacion.getDescripcion());
+            cs.setDate("_ultimaActualizacion", new java.sql.Date(aplicacion.getUltimaActualizacion().getTime()));
+            resultado = cs.executeUpdate();
+            aplicacion.setCodigo(cs.getInt("_cod_aplicacion"));          
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+
+    @Override
+    public int modificar(Aplicacion aplicacion) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_APLICACION(?,?,?,?,?,?,?)}");
+            cs.setString("_nombre",aplicacion.getNombre());
+            cs.setInt("_cod_aplicacion", aplicacion.getCodigo());    
+            cs.setString("_activoDeInformacion",aplicacion.getActivoDeInformacion());
+            cs.setString("_descripcion",aplicacion.getDescripcion());
+            cs.setString("_version",aplicacion.getVersion());
+            cs.setDate("_ultimaActualizacion",new java.sql.Date(aplicacion.getUltimaActualizacion().getTime()));            
+            cs.setInt("_fid_division",aplicacion.getIdDivision());            
+            resultado = cs.executeUpdate();  
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+
+    @Override
+    public int eliminar(int codigo) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call ELIMINAR_APLICACION(?)}");
+            cs.setInt("_cod_aplicacion", codigo);
+            resultado = cs.executeUpdate();  
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+
+    @Override
+    public ArrayList<Aplicacion> listarTodas() {
+        ArrayList<Aplicacion> aplicaciones = new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_APLICACION_TODAS()}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Aplicacion aplicacion = new Aplicacion();
+                aplicacion.setCodigo(rs.getInt("cod_aplicacion"));
+                aplicacion.setNombre(rs.getString("nombre"));
+                aplicacion.setIdDivision(rs.getInt("fid_division"));                  
+                aplicacion.setActivoDeInformacion(rs.getString("activoDeInformacion"));
+                aplicacion.setDescripcion(rs.getString("descripcion"));
+                aplicacion.setVersion(rs.getString("version"));
+                aplicacion.setUltimaActualizacion(rs.getDate("ultimaActualizacion"));
+                aplicaciones.add(aplicacion);
+            }            
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return aplicaciones;
+    }    
+}

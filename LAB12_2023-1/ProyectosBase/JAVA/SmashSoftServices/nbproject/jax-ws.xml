@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="SmashSoftUniversoService">
+      <implementation-class>pe.edu.pucp.smashsoft.services.SmashSoftUniversoService</implementation-class>
+    </service>
+    <service name="SmashSoftPlataformaService">
+      <implementation-class>pe.edu.pucp.smashsoft.services.SmashSoftPlataformaService</implementation-class>
+    </service>
+    <service name="SmashSoftPersonajeService">
+      <implementation-class>pe.edu.pucp.smashsoft.services.SmashSoftPersonajeService</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>
