@@ -1,6 +1,8 @@
 package pe.edu.pucp.smashsoft.model;
 
-public class Universo {
+import java.io.Serializable;
+
+public class Universo implements Serializable{
     private int idUniverso;
     private String nombre;
     private boolean activo;

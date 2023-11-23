@@ -1,8 +1,9 @@
 package pe.edu.pucp.smashsoft.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Personaje {
+public class Personaje implements Serializable{
     private int idPersonaje;
     private Universo universo;
     private Plataforma plataforma;

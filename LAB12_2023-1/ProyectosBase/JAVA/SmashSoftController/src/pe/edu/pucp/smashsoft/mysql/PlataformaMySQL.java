@@ -4,6 +4,8 @@
  */
 package pe.edu.pucp.smashsoft.mysql;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,13 +18,17 @@ import pe.edu.pucp.smashsoft.model.Plataforma;
  *
  * @author adalb
  */
-public class PlataformaMySQL implements PlataformaDAO{
+public class PlataformaMySQL extends UnicastRemoteObject implements PlataformaDAO{
     private Connection con;
     private ResultSet rs;
     private CallableStatement cs;
     
+    public PlataformaMySQL(int puerto)throws RemoteException{
+        super(puerto);
+    }
+    
     @Override
-    public ArrayList<Plataforma> listarTodas() {
+    public ArrayList<Plataforma> listarTodas() throws RemoteException{
         ArrayList<Plataforma> plataformas = new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();

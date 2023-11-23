@@ -4,6 +4,8 @@
  */
 package pe.edu.pucp.smashsoft.mysql;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,13 +18,17 @@ import pe.edu.pucp.smashsoft.model.Universo;
  *
  * @author adalb
  */
-public class UniversoMySQL implements UniversoDAO{
+public class UniversoMySQL extends UnicastRemoteObject implements UniversoDAO{
     private Connection con;
     private ResultSet rs;
     private CallableStatement cs;
     
+    public UniversoMySQL(int puerto) throws RemoteException{
+        super(puerto);
+    }
+    
     @Override
-    public ArrayList<Universo> listarPorNombre(String nombre){
+    public ArrayList<Universo> listarPorNombre(String nombre)throws RemoteException{
         ArrayList<Universo> universos = new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();

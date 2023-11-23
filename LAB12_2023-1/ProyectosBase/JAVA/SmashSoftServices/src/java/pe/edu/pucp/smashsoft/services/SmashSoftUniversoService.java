@@ -4,13 +4,13 @@
  */
 package pe.edu.pucp.smashsoft.services;
 
+import java.rmi.Naming;
 import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.smashsoft.dao.UniversoDAO;
 import pe.edu.pucp.smashsoft.model.Universo;
-import pe.edu.pucp.smashsoft.mysql.UniversoMySQL;
 
 /**
  *
@@ -18,7 +18,9 @@ import pe.edu.pucp.smashsoft.mysql.UniversoMySQL;
  */
 @WebService(serviceName = "SmashSoftUniversoService")
 public class SmashSoftUniversoService {
-    private UniversoDAO daoUniverso = new UniversoMySQL();
+    private String IP = "localhost";
+    private String puerto = "1234";
+    private UniversoDAO daoUniverso = null;
     /**
      * This is a sample web service operation
      */
@@ -26,6 +28,8 @@ public class SmashSoftUniversoService {
     public ArrayList<Universo> listarUniversosPorNombre(@WebParam(name = "nombre") String nombre) {
         ArrayList<Universo> universos = new ArrayList<>();
         try{
+            daoUniverso = (UniversoDAO) Naming.lookup("//"+IP+":"+
+                                        puerto+"/"+"daoUniverso");
             universos = daoUniverso.listarPorNombre(nombre);
         }
         catch(Exception ex){

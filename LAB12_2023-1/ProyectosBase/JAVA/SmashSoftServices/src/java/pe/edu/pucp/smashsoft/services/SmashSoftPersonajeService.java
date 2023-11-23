@@ -4,12 +4,12 @@
  */
 package pe.edu.pucp.smashsoft.services;
 
+import java.rmi.Naming;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.smashsoft.dao.PersonajeDAO;
 import pe.edu.pucp.smashsoft.model.Personaje;
-import pe.edu.pucp.smashsoft.mysql.PersonajeMySQL;
 
 /**
  *
@@ -17,7 +17,9 @@ import pe.edu.pucp.smashsoft.mysql.PersonajeMySQL;
  */
 @WebService(serviceName = "SmashSoftPersonajeService")
 public class SmashSoftPersonajeService {
-    private PersonajeDAO daoPersonaje = new PersonajeMySQL();
+    private String IP = "localhost";
+    private String puerto = "1234";
+    private PersonajeDAO daoPersonaje = null;
     /**
      * This is a sample web service operation
      */
@@ -25,6 +27,8 @@ public class SmashSoftPersonajeService {
     public int insertarPersonaje(@WebParam(name = "personaje") Personaje personaje) {
         int resultado = 0;
         try{
+            daoPersonaje = (PersonajeDAO) Naming.lookup("//"+IP+":"+
+                                        puerto+"/"+"daoPersonaje");
             resultado = daoPersonaje.insertar(personaje);
         }
         catch(Exception ex){

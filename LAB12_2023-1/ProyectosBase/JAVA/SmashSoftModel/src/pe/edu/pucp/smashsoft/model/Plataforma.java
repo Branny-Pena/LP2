@@ -1,6 +1,8 @@
 package pe.edu.pucp.smashsoft.model;
 
-public class Plataforma {
+import java.io.Serializable;
+
+public class Plataforma implements Serializable{
     private int idPlataforma;
     private String nombre;
     private boolean activo;

@@ -4,23 +4,29 @@
  */
 package pe.edu.pucp.smashsoft.mysql;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import pe.edu.pucp.smashsoft.config.DBManager;
-import pe.edu.pucp.smashsoft.dao.PersonajeDAO;
 import pe.edu.pucp.smashsoft.model.Personaje;
+import pe.edu.pucp.smashsoft.dao.PersonajeDAO;
 
 /**
  *
  * @author adalb
  */
-public class PersonajeMySQL implements PersonajeDAO {
+public class PersonajeMySQL extends UnicastRemoteObject implements PersonajeDAO {
     private Connection con;
     private CallableStatement cs;
     
+    public PersonajeMySQL(int puerto) throws RemoteException{
+        super(puerto);
+    }
+    
     @Override
-    public int insertar(Personaje personaje){
+    public int insertar(Personaje personaje) throws RemoteException{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
